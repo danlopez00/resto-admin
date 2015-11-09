@@ -1,0 +1,68 @@
+<!--
+ Copyright 2014 Jérôme Gasperi
+
+ Licensed under the Apache License, version 2.0 (the "License");
+ You may not use this file except in compliance with the License.
+ You may obtain a copy of the License at:
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ License for the specific language governing permissions and limitations
+ under the License.
+-->
+<!--
+    Author     : remi.mourembles@capgemini.com
+-->
+
+<div class="main">
+    <div class="show-for-large-up large-2 columns">
+
+    </div>
+    <div class="small-12 large-10 columns" ng-show="ready === true">
+        <div class="text__center" >
+            <h1>{{collection.name}}</h1>
+            <h3>{{collection.osDescription.LongName}}</h3>
+            <p>{{collection.osDescription.Description}}</p>
+            <p>
+                {{collection.osDescription.Contact}}
+            </p>
+        </div>  
+        <div>    
+            <h3>{{'license' | translate}} : {{collection.license.licenseId}}</h3>
+            <p ng-show="collection.license.licenseId !== 'unlicensed'">
+                {{'license.hasToBeSigned' | translate}} : {{collection.license.hasToBeSigned}} <br/>
+                {{'license.grantedCountries' | translate}} : {{collection.license.grantedCountries}} <br/>
+                {{'license.grantedOrganizationCountries' | translate}} : {{collection.license.grantedOrganizationCountries}}
+            </p>
+        </div>
+        <br/>
+        <div dropzone>To Add Feature, Drop Metadata File Here</div>
+        <br/>
+        <div class="text__center" >    
+            <table>
+                <thead>
+                    <tr>
+                        <th class="show-for-medium-up" >{{'feature.id' | translate}}</th>
+                        <th class="show-for-medium-up" >{{'feature.productIdentifier' | translate}}</th>
+                        <th class="show-for-medium-up" >{{'feature.startDate' | translate}}</th>
+                        <th class="show-for-medium-up" >{{'feature.action' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="feature in features">
+                        <td class="show-for-medium-up">{{ feature.id}}</td>
+                        <td class="show-for-medium-up">{{ feature.properties.productIdentifier}}</td>
+                        <td class="show-for-medium-up">{{ feature.properties.startDate}}</td>
+                        <td class="show-for-medium-up"><a ng-click='deleteFeature(feature.id)' class="button tiny alert">{{'feature.delete'| translate}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="button expand tiny" ng-click="loadMore()">{{'load_more'| translate}}</a>
+        </div>
+    </div>
+</div>
+
+
