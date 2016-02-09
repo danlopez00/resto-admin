@@ -1,8 +1,6 @@
 # resto-admin
 Administration Web client for resto server (http://github.com/jjrom/resto)
 
-![alt tag](https://raw.github.com/rmourembles/resto-admin/hm.png)
-
 # Installation
 Copy files to your web directory
 

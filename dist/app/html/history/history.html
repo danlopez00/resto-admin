@@ -1,0 +1,98 @@
+<!--
+ Copyright 2014 Jérôme Gasperi
+
+ Licensed under the Apache License, version 2.0 (the "License");
+ You may not use this file except in compliance with the License.
+ You may obtain a copy of the License at:
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ License for the specific language governing permissions and limitations
+ under the License.
+-->
+<!--
+    Author     : remi.mourembles@capgemini.com
+-->
+
+<div class="main">
+    <div class="show-for-large-up large-2 columns">
+
+    </div>
+    <div class="small-12 large-10 columns">
+
+       <div class="history tableContainer" >
+           
+           <ul class="small-block-grid-1 large-block-grid-3" >
+                <li>
+                    <div class='panel text-center'>
+                        <h3>{{'collection'| translate}}</h3>
+                        <select class="form-control"
+                                    ng-model="selectedCollection" 
+                                    ng-options="_collection for _collection in collections" 
+                                    ng-change="setParam('collection', selectedCollection)"></select>
+                    </div>
+                </li>
+                <li>
+                    <div class='panel text-center'>
+                        <h3>{{'service'| translate}}</h3>
+                        <select class="form-control" 
+                                    ng-model="selectedService" 
+                                    ng-options="_service for _service in services" 
+                                    ng-change="setParam('service', selectedService)"></select>
+                    </div>
+                </li>
+                <li>
+                    <div class='panel text-center'>
+                        <h3>{{'method'| translate}}</h3>
+                        <select class="form-control"
+                                    ng-model="selectedMethod" 
+                                    ng-options="_method for _method in methods" 
+                                    ng-change="setParam('method', selectedMethod)"></select>
+                    </div>
+                </li>
+            </ul>
+   
+           <!-- TODO 16.09.2015 : suppression de la fonctionnalité de resetFilters
+           <div>
+                <a href="" class="button small alert" ng-click="resetFilters()" style="margin-top: 15px;">{{'reset filters' | translate }}</a>
+            </div>
+            -->
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('email')" >{{'email'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'email'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('method')" >{{'method'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'method'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
+                        <th class="clickable" ng-click="setHistory('service')" >{{'service'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'service'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
+                        <th class="clickable" ng-click="setHistory('collection')" >{{'collection'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'collection'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('resourceid')" >{{'resourceid'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'resourceid'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('query')" >{{'query'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'query'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('querytime')" >{{'querytime'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'querytime'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
+                        <th class="show-for-medium-up" >ip</th>
+                    </tr>
+                </thead>
+                <tbody ng-show="showHistory">
+                    <tr ng-repeat="x in history">
+                        <td class="show-for-medium-up">{{ x.email}}</td>
+                        <td class="show-for-medium-up">{{ x.method}}</td>
+                        <td>{{ x.service}}</td>
+                        <td>{{ x.collection}}</td>
+                        <td class="show-for-medium-up">{{ x.resourceid}}</td>
+                        <td class="show-for-medium-up">{{ x.query}}</td>
+                        <td class="show-for-medium-up">{{ x.querytime}}</td>
+                        <td class="show-for-medium-up">{{ x.ip}}</td>
+                    </tr>
+                </tbody>
+            </table>
+           
+            <a class="button expand tiny" ng-click="loadMore()">{{'load_more'| translate}}</a>
+        </div>
+
+    </div>
+</div>
+
+
+
