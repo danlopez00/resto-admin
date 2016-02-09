@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2014 Jérôme Gasperi
+
+ Licensed under the Apache License, version 2.0 (the "License");
+ You may not use this file except in compliance with the License.
+ You may obtain a copy of the License at:
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ License for the specific language governing permissions and limitations
+ under the License.
+-->
+<!--
+    Author     : remi.mourembles@capgemini.com
+-->
+<head>
+    <title>Administration user</title>
+</head>
+<div ng-show="showUser">
+    <div class="headContent main">
+        <div class="show-for-large-up large-2 columns">
+
+        </div>
+        <div class="small-12 large-10 columns">
+
+            <div class="profile">
+                <h3 class="title">
+                    {{selectedUser.userid}} - {{selectedUser.username}}
+                </h3>
+                <p>
+                    <b>{{'user.email'| translate}} : {{selectedUser.email}}</b> <br/>
+                    {{'user.name'| translate}} : {{selectedUser.givenname}} {{selectedUser.lastname}} <br/>
+                    {{'user.country'| translate}} : {{selectedUser.country}} <br/>
+                    {{'user.organization'| translate}} : {{selectedUser.organization}} <br/>
+                    {{'user.organizationcountry'| translate}} : {{selectedUser.organizationcountry}} <br/>
+                    {{'user.topics'| translate}} : {{selectedUser.topics}} <br/>
+                    {{'user.validatedby'| translate}} : {{selectedUser.validatedby}} <br/>
+                </p>    
+                <ul class="small-block-grid-2 large-block-grid-2">
+                    <li><a class="button expand [tiny small large]" ng-class="{ success : selectedUser.validatedby !== null, alert : selectedUser.validatedby === null}" ng-click="validation()">{{selectedUser.validatedby !== null ? 'unvalidate' : 'validate'| translate}}</a></li>
+                    <li><a class="button expand [tiny small large]" ng-class="{ success : selectedUser.activated === 1, alert : selectedUser.activated === 0}" ng-click="activation()">{{selectedUser.activated === 1 ? 'deactivate' : 'activate'| translate}}</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="show-for-large-up large-2 columns">
+
+    </div>
+    <div class="small-12 large-10 columns">
+
+        <div class="user content">
+            <div style="text-align: center;">
+                <ul class="button-group">
+                    <li><a ng-class="{true:'clicked', false:''}[showRights === true]" class="button small" ng-click="goToRights()" title="{{'user.rights'| translate}}"><i class="fi-clipboard-notes" ></i></a></li>
+                    <li><a ng-class="{true:'clicked', false:''}[showGroups === true]" class="button small" ng-click="goToGroups()" title="{{'user.groups'| translate}}"><i class="fi-torsos" ></i></a></li>
+                    <li><a ng-class="{true:'clicked', false:''}[showHistory === true]" class="button small" ng-click="goToHistory()" title="{{'user.history'| translate}}"><i class="fi-page-multiple" ></i></a></li>
+                    <li><a ng-show="showCreation" ng-class="{true:'clicked', false:''}[showCreation === true]" class="ng-hide button small disabled">{{'user.create_right'| translate}}</a></li>
+                </ul>
+            </div>
+
+            <div ng-include="template"></div>
+
+        </div>
+
+    </div>
+</div>
+

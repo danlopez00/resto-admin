@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2014 Jérôme Gasperi
+
+ Licensed under the Apache License, version 2.0 (the "License");
+ You may not use this file except in compliance with the License.
+ You may obtain a copy of the License at:
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ License for the specific language governing permissions and limitations
+ under the License.
+-->
+<!--
+    Created on : 2015
+    Author     : remi.mourembles@capgemini.com
+-->
+
+<html>
+    <head>
+        <title>Administration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="assets/libs/angular/angular-chart-0.8.8/angular-chart.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/foundation/css/foundation.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/foundation/foundation-icons/foundation-icons.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/foundation/css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/ol3-cesium/ol3/css/ol.css" type="text/css" />
+        <link rel="stylesheet" href="assets/css/style.min.css" type="text/css" />
+    </head>
+    <body ng-app="administration">
+        <div ng-controller="mainController">
+
+            <div class="hide-for-large-up small-12 topMenu">
+                <a href="" class="" ng-click="displayLeftMenu()"><i class="size-24 fi-list"></i></a>
+            </div>
+
+            <div ng-include src="'app/html/main/smallLeftMenu.html'"></div>
+            <div ng-include src="'app/html/main/largeLeftMenu.html'"></div>
+
+            <div class="ng-hide" ng-show="profile" ng-view></div>
+            
+            <div id="spinner"><img class="spinner--img" ng-src="assets/css/img/spinner.gif"></div>
+
+            <div class="popup ng-hide" ng-show="displaySignIn">
+                <div ng-include src="'app/html/signin/signIn.html'"></div>
+            </div>
+
+            <div class="ng-hide main" ng-show="!profile">
+                <div class="show-for-large-up large-2 columns">
+
+                </div>
+                <div class="small-12 large-10 columns">
+                    <h1><span ng-bind="'unloggedText' | translate"></span></h1>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- External js libs -->
+        <script type="text/javascript" src="assets/libs/libs.min.js"></script>
+        
+        <!-- Internal js -->
+        <script type="text/javascript" src="app/components/main.min.js"></script>
+        <script type="text/javascript" src="app/components/app.constant.js"></script>
+</html>
