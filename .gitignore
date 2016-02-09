@@ -1,3 +1,4 @@
+.gitignore
 /nbproject/
 /old/
 /Gruntfile.js
