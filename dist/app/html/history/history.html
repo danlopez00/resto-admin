@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
  Copyright 2014 Jérôme Gasperi
 
@@ -16,7 +17,9 @@
 <!--
     Author     : remi.mourembles@capgemini.com
 -->
-
+<head>
+    <title>Administration history</title>
+</head>
 <div class="main">
     <div class="show-for-large-up large-2 columns">
 
@@ -65,13 +68,13 @@
                 <thead>
                     <tr>
                         <th class="show-for-medium-up clickable" ng-click="setHistory('email')" >{{'email'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'email'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
-                        <th class="show-for-medium-up clickable" ng-click="setHistory('method')" >{{'method'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'method'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
-                        <th class="clickable" ng-click="setHistory('service')" >{{'service'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'service'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
-                        <th class="clickable" ng-click="setHistory('collection')" >{{'collection'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'collection'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
-                        <th class="show-for-medium-up clickable" ng-click="setHistory('resourceid')" >{{'resourceid'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'resourceid'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
-                        <th class="show-for-medium-up clickable" ng-click="setHistory('query')" >{{'query'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'query'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
-                        <th class="show-for-medium-up clickable" ng-click="setHistory('querytime')" >{{'querytime'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'querytime'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></th>
-                        <th class="show-for-medium-up" >ip</th>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('method')" >{{'method'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'method'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
+                        <th class="clickable" ng-click="setHistory('service')" >{{'service'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'service'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i>/th>
+                        <th class="clickable" ng-click="setHistory('collection')" >{{'collection'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'collection'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('resourceid')" >{{'resourceid'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'resourceid'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('query')" >{{'query'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'query'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
+                        <th class="show-for-medium-up clickable" ng-click="setHistory('querytime')" >{{'querytime'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'querytime'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
+                        <th class="show-for-medium-up" >{{'ip' | translate}}</th>
                     </tr>
                 </thead>
                 <tbody ng-show="showHistory">

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<checkstyle encoding="UTF-8" version="6.9">
+   <file name="/home/remi/Devs/administration-client/dev/app/html/collection/collection.html">
+      <error line="45" col="22" severity="error" source="html-angular-validate" message="The &#8220;dropzone&#8221; attribute is not supported by browsers yet. It would probably be better to wait for implementations."/>
+   </file>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/collections/collections.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/group/group.html">
+      <error line="63" col="96" severity="error" source="html-angular-validate" message="Bad value &#8220;#users/{{ x.userid}}&#8221; for attribute &#8220;href&#8221; on element &#8220;a&#8221;: Illegal character in fragment: &#8220;{&#8221; is not allowed."/>
+   </file>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/groups/groups.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/history/history.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/home/home.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/main/largeLeftMenu.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/main/smallLeftMenu.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/signin/signIn.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/stats/stats.html">
+      <error line="37" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-data&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="37" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-labels&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="49" col="66" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-data&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="49" col="66" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-labels&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="49" col="66" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-legend&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="49" col="66" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-series&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="59" col="63" severity="error" source="html-angular-validate" message="Duplicate ID &#8220;line&#8221;."/>
+      <error line="49" col="66" severity="error" source="html-angular-validate" message="The first occurrence of ID &#8220;line&#8221; was here."/>
+      <error line="59" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-data&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="59" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-labels&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="59" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-legend&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="59" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-series&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="69" col="63" severity="error" source="html-angular-validate" message="Duplicate ID &#8220;line&#8221;."/>
+      <error line="49" col="66" severity="error" source="html-angular-validate" message="The first occurrence of ID &#8220;line&#8221; was here."/>
+      <error line="69" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-data&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="69" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-labels&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="69" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-legend&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+      <error line="69" col="63" severity="error" source="html-angular-validate" message="Attribute &#8220;chart-series&#8221; not allowed on element &#8220;canvas&#8221; at this point."/>
+   </file>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/user/templates/groups.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/user/templates/history.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/user/templates/rightCreation.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/user/templates/rights.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/user/templates/signatures.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/user/user.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/userCreation/userCreation.html"/>
+   <file name="/home/remi/Devs/administration-client/dev/app/html/users/users.html"/>
+</checkstyle>

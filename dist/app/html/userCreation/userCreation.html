@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
  Copyright 2014 Jérôme Gasperi
 
@@ -16,14 +17,16 @@
 <!--
     Author     : remi.mourembles@capgemini.com
 -->
-
+<head>
+    <title>Administration user creation</title>
+</head>
 <div class="main">
     <div class="row">
         <h1>{{'create user' | translate}}</h1> 
         <label class="small fat text-light">{{'email'| translate}}</label>
         <input type="text" ng-model="profile.email" class="form-control" required autofocus/>
         <label class="small fat text-light">{{'password'| translate}}</label>
-        <input type="password" ng-model="profile.password" class="form-control" required autofocus/>
+        <input type="password" ng-model="profile.password" class="form-control" required/>
         <label class="small fat text-light">{{'username'| translate}}</label>
         <input type="text" ng-model="profile.username" class="form-control" required/>
         <label class="small fat text-light">{{'givename'| translate}}</label>
