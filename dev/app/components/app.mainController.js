@@ -145,6 +145,8 @@
             $scope.showGroups = false;
 
             $scope.displayLocalAuth = CONFIG.auth.displayLocalAuth;
+            
+            $scope.stats = CONFIG.statistics ? true : false;
         };
 
         /**

@@ -56,6 +56,20 @@
                                     ng-change="setParam('method', selectedMethod)"></select>
                     </div>
                 </li>
+                <li>
+                    <div class="text-center">
+                        <datepicker date-format="yyyy-MM-dd">
+                            <input ng-model="mindate" ng-change="setParam('mindate', mindate)" type="text" placeholder="date min..."/>
+                        </datepicker>
+                    </div>  
+                </li>    
+                <li>
+                    <div class="text-center">
+                        <datepicker date-format="yyyy-MM-dd">
+                            <input ng-model="maxdate" ng-change="setParam('maxdate', maxdate)" type="text" placeholder="date max..."/>
+                        </datepicker>
+                    </div>
+                </li>
             </ul>
    
            <!-- TODO 16.09.2015 : suppression de la fonctionnalité de resetFilters
@@ -69,7 +83,7 @@
                     <tr>
                         <th class="show-for-medium-up clickable" ng-click="setHistory('email')" >{{'email'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'email'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
                         <th class="show-for-medium-up clickable" ng-click="setHistory('method')" >{{'method'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'method'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
-                        <th class="clickable" ng-click="setHistory('service')" >{{'service'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'service'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i>/th>
+                        <th class="clickable" ng-click="setHistory('service')" >{{'service'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'service'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
                         <th class="clickable" ng-click="setHistory('collection')" >{{'collection'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'collection'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
                         <th class="show-for-medium-up clickable" ng-click="setHistory('resourceid')" >{{'resourceid'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'resourceid'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>
                         <th class="show-for-medium-up clickable" ng-click="setHistory('query')" >{{'query'| translate}}  <i class="fi-arrow-up" ng-show="orderBy === 'query'" ng-class="{true:'fi-arrow-up', false:'fi-arrow-down'}[ascOrDesc === 'DESC']"></i></th>

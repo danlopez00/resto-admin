@@ -28,7 +28,7 @@
         <a ng-show="showUser" ng-class="{true:'clickedRight', false:''}[showUser === true]" class="ng-hide button disabled"><i class="fi-torso" ></i>  {{'user'| translate}}</a>
         <a ng-class="{true:'clickedRight', false:''}[showGroups === true]" href="#groups" class="button"><i class="fi-torsos" ></i>  {{'user.groups'| translate}}</a>
         <a ng-class="{true:'clickedRight', false:''}[showHistory === true]" href="#history" class="button"><i class="fi-page-multiple" ></i>  {{'history'| translate}}</a>
-        <a ng-class="{true:'clickedRight', false:''}[showStats === true]" href="#stats" class="button"><i class="fi-graph-bar" ></i>  {{'stats'| translate}}</a>
+        <a ng-if="stats" ng-class="{true:'clickedRight', false:''}[showStats === true]" href="#stats" class="button"><i class="fi-graph-bar" ></i>  {{'stats'| translate}}</a>
         <a ng-class="{true:'clickedRight', false:''}[showCollections === true]" href="#collections" class="button"><i class="fi-list-thumbnails" ></i>  {{'items'| translate}}</a>
     </div>
     <a ng-click="startSignIn()" class="button ng-hide" ng-show="!profile" >{{'login'| translate}}</a>

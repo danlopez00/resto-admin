@@ -56,7 +56,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="feature in features">
-                        <td class="show-for-medium-up">{{ feature.id}}</td>
+                        <td class="show-for-medium-up"><a href="{{restoServerUrl + '/collections/' + feature.properties.collection + '/' + feature.id + '.json?_pretty=true' }}">{{ feature.id}}</a></td>
                         <td class="show-for-medium-up">{{ feature.properties.productIdentifier}}</td>
                         <td class="show-for-medium-up">{{ feature.properties.startDate}}</td>
                         <td class="show-for-medium-up"><a ng-click='deleteFeature(feature.id)' class="button tiny alert">{{'feature.delete'| translate}}</a></td>

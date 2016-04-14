@@ -96,8 +96,8 @@
                 options.collection = $scope.collection;
                 options.method = $scope.method;
                 options.service = $scope.service;
-                options.maxDate = $scope.maxDate;
-                options.minDate = $scope.minDate;
+                options.maxdate = $scope.maxdate;
+                options.mindate = $scope.mindate;
 
                 administrationAPI.getHistory(options, function(data) {
                     $scope.offset = $scope.offset + $scope.limit;
@@ -157,6 +157,10 @@
                     $scope.service = value;
                 } else if (type === 'collection') {
                     $scope.collection = value;
+                } else if (type === 'mindate') {
+                    $scope.mindate = value;
+                } else if (type === 'maxdate') {
+                    $scope.maxdate = value;
                 }
                 
                 /*

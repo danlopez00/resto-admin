@@ -74,8 +74,8 @@
             var email = options.email;
             var method = options.method;
             var service = options.service;
-            var maxDate = options.maxDate;
-            var minDate = options.minDate;
+            var maxDate = options.maxdate;
+            var minDate = options.mindate;
             var collection = options.collection;
 
             var url = config.restoServerUrl + config.administrationEndpoint;

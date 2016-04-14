@@ -34,7 +34,9 @@
         'infinite-scroll',
         'satellizer',
         'pascalprecht.translate',
-        'chart.js'
+        'chart.js',
+        '720kb.datepicker',
+        'ngFlash'
     ]);
 
     
