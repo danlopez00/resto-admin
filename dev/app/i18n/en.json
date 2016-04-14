@@ -77,7 +77,7 @@
     "error.putGrantedVisibility": "Error : error while updating granted visibility",
     "error.addGrantedVisibility": "Error : error while adding granted visibility",
     "error.deleteGrantedVisibility": "Error : error while deleting granted visibility",
-    
+
     "menu.title": "RESTo",
     
     "signin.title" : "SignIn",

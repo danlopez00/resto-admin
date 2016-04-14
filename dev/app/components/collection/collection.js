@@ -24,11 +24,27 @@
     /* Controller Collection */
 
 
-    angular.module('administration').controller('CollectionController', ['$scope', '$routeParams', '$filter', 'administrationServices', 'restoCollectionsAPI', collectionController]);
+    angular.module('administration').controller('CollectionController',
+            [
+                '$scope',
+                '$routeParams',
+                '$filter',
+                'administrationServices',
+                'restoCollectionsAPI',
+                'CONFIG',
+                collectionController
+            ]);
 
-    function collectionController($scope, $routeParams, $filter, administrationServices, restoCollectionsAPI) {
+    function collectionController($scope,
+            $routeParams,
+            $filter,
+            administrationServices,
+            restoCollectionsAPI,
+            CONFIG) {
 
         if (administrationServices.isUserAnAdministrator()) {
+
+            $scope.restoServerUrl = CONFIG.restoServerUrl;
 
             /*
              * Get collection description

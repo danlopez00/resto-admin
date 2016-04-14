@@ -25,52 +25,110 @@
 
     </div>
     <div class="small-12 large-10 columns">
+        <!-- Messages container -->
+        <flash-message duration="5000" show-close="false" on-dismiss="error(flash)" ></flash-message>
         <div class="history tableContainer" >
-            <ul class="small-block-grid-1 large-block-grid-2" >
+             <fieldset>
+                <legend>Users</legend>
+                <ul class="small-block-grid-1 large-block-grid-2" >
+                    <li>
+                        <div id="mapUsers" class="map" style="width:100%;height:350px;background: grey;"></div>  
+                        <span ng-if='feat.name'>{{feat.name}} : {{feat.count}}</span>
+                    </li>
+                    <li>
+                        <canvas id="radar" class="chart chart-radar" 
+                                chart-data="chart.topics.data" 
+                                chart-labels="chart.topics.labels">
+                        </canvas> 
+                    </li>
+                </ul>
+            </fieldset>  
+            <ul class="small-block-grid-1 large-block-grid-4 margin-top-10">
                 <li>
-                    <div id="mapUsers" class="map" style="width:100%;height:350px;background: grey;"></div>  
-                    <span ng-if='feat.name'>{{feat.name}} : {{feat.count}}</span>
-                </li>
-                <li>
-                    <canvas id="radar" class="chart chart-radar" 
-                            chart-data="chart.topics.data" 
-                            chart-labels="chart.topics.labels">
-                    </canvas> 
+                    <select class="form-control"
+                            ng-model="selectedCollection" 
+                            ng-options="_collection.name for _collection in collections" 
+                            ng-change="setParam('collection', selectedCollection.name)"></select>
                 </li>
             </ul>
-
-            <ul class="small-block-grid-1 large-block-grid-3">
-                <li class="center">
-                    <h3>Downloads</h3>
-                    <canvas id="line" class="chart chart-line" 
-                            chart-data="chart.downloads.values" 
-                            chart-labels="chart.downloads.labels" 
-                            chart-legend="false" 
-                            chart-series="chart.downloads.series">
-                    </canvas> 
-                    <a class="button tiny" ng-click="download(downloadableLinks.downloads)" >{{'download .csv'| translate}}</a>
-                </li>
-                <li class="center">
-                    <h3>Search</h3>
-                    <canvas id="line" class="chart chart-line" 
-                            chart-data="chart.search.values" 
-                            chart-labels="chart.search.labels" 
-                            chart-legend="false" 
-                            chart-series="chart.search.series">
-                    </canvas> 
-                    <a class="button tiny" ng-click="download(downloadableLinks.search)" >{{'download .csv'| translate}}</a>
-                </li>
-                <li class="center">
-                    <h3>Insert</h3>
-                    <canvas id="line" class="chart chart-line" 
-                            chart-data="chart.insert.values" 
-                            chart-labels="chart.insert.labels" 
-                            chart-legend="false" 
-                            chart-series="chart.insert.series">
-                    </canvas>
-                    <a class="button tiny" ng-click="download(downloadableLinks.insert)" >{{'download .csv'| translate}}</a>
-                </li>
-            </ul>
+            <fieldset>
+                <legend>History</legend>    
+                <ul class="small-block-grid-1 large-block-grid-3">
+                    <li class="center">
+                        <h3>Downloads</h3>
+                        <canvas id="line" class="chart chart-line" 
+                                chart-data="chart.downloads.values" 
+                                chart-labels="chart.downloads.labels" 
+                                chart-legend="false" 
+                                chart-series="chart.downloads.series">
+                        </canvas> 
+                        <a class="button tiny" ng-click="download(downloadableLinks.downloads)" >{{'download .csv'| translate}}</a>
+                    </li>
+                    <li class="center">
+                        <h3>Search</h3>
+                        <canvas id="line" class="chart chart-line" 
+                                chart-data="chart.search.values" 
+                                chart-labels="chart.search.labels" 
+                                chart-legend="false" 
+                                chart-series="chart.search.series">
+                        </canvas> 
+                        <a class="button tiny" ng-click="download(downloadableLinks.search)" >{{'download .csv'| translate}}</a>
+                    </li>
+                    <li class="center">
+                        <h3>Insert</h3>
+                        <canvas id="line" class="chart chart-line" 
+                                chart-data="chart.insert.values" 
+                                chart-labels="chart.insert.labels" 
+                                chart-legend="false" 
+                                chart-series="chart.insert.series">
+                        </canvas>
+                        <a class="button tiny" ng-click="download(downloadableLinks.insert)" >{{'download .csv'| translate}}</a>
+                    </li>
+                </ul>
+            </fieldset>  
+            <fieldset>
+                <legend>Products</legend>    
+                <ul class="small-block-grid-1 large-block-grid-2">
+                    <li>
+                        <h3>10 best Downloads</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="show-for-medium-up">{{'resourceid'| translate}} </th>
+                                    <th class="show-for-medium-up">{{'collection'| translate}}</th>
+                                    <th>{{'count'| translate}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in products.best.downloads_all_time">
+                                    <td class="show-for-medium-up"><a href="{{restoServerUrl + '/collections/' + x.collection + '/' + x.resourceid + '.json?_pretty=true' }}">{{ x.resourceid}}</a></td>
+                                    <td class="show-for-medium-up">{{ x.collection}}</td>
+                                    <td>{{ x.count}}</td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <h3>10 best Downloaders</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="show-for-medium-up">{{'userid'| translate}} </th>
+                                    <th>{{'count'| translate}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in products.best.downloaders_all_time">
+                                    <td class="show-for-medium-up"><a href="#users/{{ x.userid }}">{{ x.userid}}</a></td>
+                                    <td>{{ x.count}}</td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </fieldset>    
         </div>
 
     </div>

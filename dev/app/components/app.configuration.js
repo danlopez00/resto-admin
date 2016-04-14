@@ -93,7 +93,8 @@
             'requestError': function (rejection) {
                 $("#spinner").hide();
 
-                return $q.reject(rejection);
+                //return $q.reject(rejection);
+                return rejection;
             },
             // optional method
             'response': function (response) {
@@ -104,7 +105,8 @@
             'responseError': function (rejection) {
                 $("#spinner").hide();
 
-                return $q.reject(rejection);
+                //return $q.reject(rejection);
+                return rejection;
             }
         };
     }

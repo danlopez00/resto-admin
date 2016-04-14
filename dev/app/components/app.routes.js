@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     'use strict';
 
@@ -22,8 +22,17 @@
      Author     : remi.mourembles@capgemini.com
      */
 
-    angular.module('administration').config(['$routeProvider',
-        function($routeProvider) {
+    angular.module('administration').config([
+        '$routeProvider',
+        'CONFIG',
+        function ($routeProvider, CONFIG) {
+
+            if (CONFIG.statistics) {
+                $routeProvider.when('/stats', {
+                    templateUrl: "app/html/stats/stats.html",
+                    controller: "StatsController"
+                });
+            }
 
             $routeProvider
                     .when('/home', {
@@ -45,10 +54,6 @@
                     .when('/history', {
                         templateUrl: "app/html/history/history.html",
                         controller: "HistoryController"
-                    })
-                    .when('/stats', {
-                        templateUrl: "app/html/stats/stats.html",
-                        controller: "StatsController"
                     })
                     .when('/groups', {
                         templateUrl: "app/html/groups/groups.html",
