@@ -26,13 +26,13 @@
     </div>
     <div class="small-12 large-10 columns">
         <!-- Messages container -->
-        <flash-message duration="5000" show-close="false" on-dismiss="error(flash)" ></flash-message>
+        <flash-message show-close="false" on-dismiss="error(flash)" ></flash-message>
         <div class="history tableContainer" >
              <fieldset>
                 <legend>Users</legend>
                 <ul class="small-block-grid-1 large-block-grid-2" >
                     <li>
-                        <div id="mapUsers" class="map" style="width:100%;height:350px;background: grey;"></div>  
+                        <div ng-show="showMapUsers" id="mapUsers" class="map" style="width:100%;height:350px;background: grey;"></div>  
                         <span ng-if='feat.name'>{{feat.name}} : {{feat.count}}</span>
                     </li>
                     <li>

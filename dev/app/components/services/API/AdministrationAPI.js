@@ -800,7 +800,7 @@
          * @returns {undefined}
          */
         function getGroups(options, callback, error) {
-            var cache = true;
+            var cache = false;
             var url = config.restoServerUrl + '/' + config.administrationEndpoint + '/users/';
             if (options.userid) {
                 url = url + options.userid;
