@@ -83,27 +83,45 @@
             .factory('myHttpInterceptor', [myHttpInterceptor]);
 
     function myHttpInterceptor($q) {
+
+        /*
+         * In case of multiple requests, display spinner until the last request
+         * is done
+         * @type Number
+         */
+        var count = 0;
+
         return {
             // optional method
             'request': function (config) {
                 $("#spinner").show();
+                count = count + 1;
                 return config;
             },
             // optional method
             'requestError': function (rejection) {
-                $("#spinner").hide();
+                count = count - 1;
+                if (count === 0) {
+                    $("#spinner").hide();
+                }
 
                 //return $q.reject(rejection);
                 return rejection;
             },
             // optional method
             'response': function (response) {
-                $("#spinner").hide();
+                count = count - 1;
+                if (count === 0) {
+                    $("#spinner").hide();
+                }
                 return response;
             },
             // optional method
             'responseError': function (rejection) {
-                $("#spinner").hide();
+                count = count - 1;
+                if (count === 0) {
+                    $("#spinner").hide();
+                }
 
                 //return $q.reject(rejection);
                 return rejection;

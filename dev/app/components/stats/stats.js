@@ -48,6 +48,7 @@
                 $scope.stats = [];
                 $scope.chart = [];
                 $scope.maps = [];
+                $scope.showMapUsers = true;
                 $scope.feat = [];
                 $scope.products = [];
                 $scope.downloadableLinks = [];
@@ -448,7 +449,8 @@
                                 // Add layer to current Map
                                 map.addLayer(vectorLayer);
                             }, function () {
-                                $scope.throwError('error : cannot get information about users countries');
+                                $scope.showMapUsers = false;
+                                $scope.throwError('cannot get information about users countries');
                             });
                         }
 
@@ -515,6 +517,8 @@
                  * @returns {undefined}
                  */
                 $scope.init = function () {
+                    
+                    $scope.showMapUsers = true;
 
                     if (CONFIG.statistics.displayMapDensity) {
                         // Init map which represents users world repartition
