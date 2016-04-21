@@ -1,9 +1,6 @@
-//Grunt is just JavaScript running in node, after all...
 module.exports = function (grunt) {
 
-    // All upfront config goes in a massive nested object.
     grunt.initConfig({
-        // You can set arbitrary key-value pairs.
         distFolder: 'dist',
         uglify: {
             main: {
@@ -98,7 +95,7 @@ module.exports = function (grunt) {
                 src: ['dev/app/html/**/*.html']
             }
         }
-    }); // The end of grunt.initConfig
+    });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -107,7 +104,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-html-angular-validate');
     grunt.loadNpmTasks('grunt-contrib-concat');
 
-    // Register our own custom task alias.
+    /*
+     * grunt build
+     * grunt validate
+     */
     grunt.registerTask('build', ['uglify', 'cssmin', 'concat', 'copy']);
     grunt.registerTask('validate', ['jshint', 'htmlangular']);
 };
