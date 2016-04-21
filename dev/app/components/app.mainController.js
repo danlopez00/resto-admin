@@ -177,6 +177,7 @@
                      * Else, set profile and close popup
                      */
                     $scope.profile = $auth.getPayload();
+                    $scope.startRefreshToken();
                     $scope.closeSignIn();
                 }
             })
